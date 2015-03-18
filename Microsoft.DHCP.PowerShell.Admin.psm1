@@ -1450,7 +1450,7 @@ function Remove-DHCPReservation {
     elseif($Scope.GetType() -eq [DHCPScope] -and !$Server) { $Server = $Scope.Server }
     if(!$IPAddress) { Write-Host "Error: Invalid null entry for IPAddress." -ForeGroundColor Red; return }
     if(!$MACAddress) { Write-Host "Error: Invalid null entry for MACAddress." -ForeGroundColor Red; return }
-    else { $MACAddress = $MACAddress.Replace("-","").Replace(".","") }
+    else { $MACAddress = $MACAddress.Replace("-","").Replace(":","") }
     }
   $text = $(Invoke-Expression "cmd /c netsh dhcp server \\$Server scope $Scope delete reservedip $IPAddress $MACAddress")
   $result = if($text.GetType() -eq [string]){$text}else{$text[($text.Count-1)]}
