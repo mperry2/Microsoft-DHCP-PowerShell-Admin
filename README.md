@@ -15,11 +15,11 @@ Instructions for Use:
 
 Note that seven new structures/data types are created by this module. To understand what attributes each structure has, see the Add-Type section at the top of the script.
 
-# See Also
+## See Also
 
   * [Microsoft TechNet Posting][1]
 
-# Author
+## Author
 
 Jeremy Engel
 
